@@ -1,7 +1,6 @@
 package example.akka
 
 import akka.persistence.journal.{EventAdapter, EventSeq}
-import example.data.DataPointAdded
 import example.domain._
 
 class ProtoBuffAdapter extends EventAdapter {

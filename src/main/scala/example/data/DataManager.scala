@@ -4,11 +4,10 @@ import java.time.Clock
 
 import akka.actor.{ActorLogging, Props}
 import akka.persistence._
-import example.domain.{AddData, DataPoint}
+import example.domain.{AddDataReply, _}
 
 import scala.collection.mutable.ListBuffer
 
-case class DataPointAdded(point: DataPoint)
 
 object DataManager {
   def props(clock: Clock) = Props(classOf[DataManager], clock)
@@ -38,11 +37,14 @@ class DataManager (val clock: Clock)
       if(canAdd(point)) {
         persist(DataPointAdded(point)) { evt =>
           whenDataPointAdded(evt)
-          sender ! "bang"
+          sender ! AddDataReply(true)
         }
       } else {
-          sender ! "nope"
+          sender ! AddDataReply(false)
       }
+
+    case GetData(location) =>
+      sender ! GetDataReply(buffer.toList)
 
     case msg =>
       log.warning(s"[${persistenceId}] Unknown message on receiveCommand '${msg}'")

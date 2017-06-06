@@ -14,6 +14,8 @@ case class AddDataReply(added: Boolean)
 case class GetData(location: Option[String])
 case class GetDataReply(entries: Seq[DataPoint])
 
+/* */
+case class DataPointAdded(point: DataPoint)
 
 object Domain {
   implicit val customDateWrites: Writes[java.util.Date] = dateWrites("yyyy-MM-dd'T'HH:mm:ss")
