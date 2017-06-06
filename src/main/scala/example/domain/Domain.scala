@@ -3,6 +3,7 @@ package example.domain
 import java.util.Date
 
 import play.api.libs.json.Writes.dateWrites
+import play.api.libs.json.Reads.dateReads
 import play.api.libs.json._
 
 /* Domain Model */
@@ -18,7 +19,9 @@ case class GetDataReply(entries: Seq[DataPoint])
 case class DataPointAdded(point: DataPoint)
 
 object Domain {
-  implicit val customDateWrites: Writes[java.util.Date] = dateWrites("yyyy-MM-dd'T'HH:mm:ss")
-  implicit val dataPointWriter = Json.writes[DataPoint]
-  implicit val dataPointReader = Json.reads[DataPoint]
+  val format = "yyyyMMdd'T'HHmmss"
+  implicit val customDateWrites = dateWrites(format)
+  implicit val customDateReads  = dateReads(format)
+  implicit val dataPointWriter  = Json.writes[DataPoint]
+  implicit val dataPointReader  = Json.reads[DataPoint]
 }
