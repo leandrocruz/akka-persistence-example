@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "example.domain";
+option java_package = "example";
 import "google/protobuf/wrappers.proto";
 
 message ProtoDataPoint {

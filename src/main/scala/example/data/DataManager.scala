@@ -8,7 +8,6 @@ import example.domain.{AddData, DataPoint}
 
 import scala.collection.mutable.ListBuffer
 
-
 case class DataPointAdded(point: DataPoint)
 
 object DataManager {

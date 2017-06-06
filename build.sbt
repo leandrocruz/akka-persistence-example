@@ -15,19 +15,16 @@ val AkkaVersion = "2.5.1"
 val AkkaPersistenceCassandra = "0.54"
 
 libraryDependencies ++= Seq(
-  jdbc,
-  cache,
-  ws,
   filters,
-  "io.netty" % "netty-transport-native-epoll" % "4.0.41.Final",
-  "com.typesafe.akka" %% "akka-persistence" % AkkaVersion,
-  "com.typesafe.akka" %% "akka-persistence-cassandra" % AkkaPersistenceCassandra,
-  "com.google.protobuf" % "protobuf-java-util" % "3.2.0",
-  "com.typesafe.akka" %% "akka-persistence-tck" % AkkaVersion % Test,
-  "com.typesafe.akka" %% "akka-stream-testkit" % AkkaVersion % Test,
-  "com.typesafe.akka" %% "akka-persistence-cassandra-launcher" % AkkaPersistenceCassandra % Test,
-  "org.scalatestplus.play" %% "scalatestplus-play" % "2.0.0" % Test,
-  "org.scalamock" %% "scalamock-scalatest-support" % "3.5.0" % Test
+  "io.netty"                % "netty-transport-native-epoll"          % "4.0.41.Final",
+  "com.typesafe.akka"       %% "akka-persistence"                     % AkkaVersion,
+  "com.typesafe.akka"       %% "akka-persistence-cassandra"           % AkkaPersistenceCassandra,
+  "com.google.protobuf"     % "protobuf-java-util"                    % "3.2.0",
+  "com.typesafe.akka"       %% "akka-persistence-tck"                 % AkkaVersion               % Test,
+  "com.typesafe.akka"       %% "akka-stream-testkit"                  % AkkaVersion               % Test,
+  "com.typesafe.akka"       %% "akka-persistence-cassandra-launcher"  % AkkaPersistenceCassandra  % Test,
+  "org.scalatestplus.play"  %% "scalatestplus-play"                   % "2.0.0"                   % Test,
+  "org.scalamock"           %% "scalamock-scalatest-support"          % "3.5.0"                   % Test
 )
 
 
