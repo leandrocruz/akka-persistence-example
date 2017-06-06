@@ -8,9 +8,6 @@ message ProtoDataPoint {
     uint32 value = 3;
 }
 
-message ProtoCustomerFlagged {
-    string customer = 1;
-}
 
 message ProtoDataPointAdded {
     ProtoDataPoint point = 1;
