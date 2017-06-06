@@ -1,0 +1,5 @@
+GET     /internal/ping          example.controllers.InternalController.ping()
+GET     /internal/env           example.controllers.InternalController.getenv()
+GET     /internal/config        example.controllers.InternalController.config()
+GET     /data                   example.controllers.DataController.getData(location: Option[String])
+POST    /data                   example.controllers.DataController.addData()

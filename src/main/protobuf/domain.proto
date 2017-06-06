@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_package = "example.domain";
+import "google/protobuf/wrappers.proto";
+
+message ProtoDataPoint {
+    string location = 1;
+    int64 date = 2;
+    uint32 value = 3;
+}
+
+message ProtoCustomerFlagged {
+    string customer = 1;
+}
+
+message ProtoDataPointAdded {
+    ProtoDataPoint point = 1;
+}
