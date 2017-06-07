@@ -23,7 +23,7 @@ class DataManager (val clock: Clock)
   private def canAdd(point: DataPoint): Boolean =
     clock.instant().isAfter(point.date.toInstant)
 
-  def whenDataPointAdded(evt: DataPointAdded): Unit = buffer += evt.point
+  def whenDataPointAdded(evt: DataPointAdded) = buffer += evt.point
 
   override def receiveRecover: Receive = {
     case evt: DataPointAdded => whenDataPointAdded(evt)

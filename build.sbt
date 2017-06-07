@@ -24,7 +24,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka"       %% "akka-stream-testkit"                  % AkkaVersion               % Test,
   "com.typesafe.akka"       %% "akka-persistence-cassandra-launcher"  % AkkaPersistenceCassandra  % Test,
   "org.scalatestplus.play"  %% "scalatestplus-play"                   % "2.0.0"                   % Test,
-  "org.scalamock"           %% "scalamock-scalatest-support"          % "3.5.0"                   % Test
+  "org.scalamock"           %% "scalamock-scalatest-support"          % "3.5.0"                   % Test,
+  "com.github.dnvriend"     %% "akka-persistence-inmemory"            % "2.4.17.1"                % Test
 )
 
 
