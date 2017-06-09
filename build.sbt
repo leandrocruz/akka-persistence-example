@@ -16,10 +16,10 @@ val AkkaPersistenceCassandra = "0.54"
 
 libraryDependencies ++= Seq(
   filters,
-  "io.netty"                % "netty-transport-native-epoll"          % "4.0.41.Final",
+  "io.netty"                %  "netty-transport-native-epoll"         % "4.0.41.Final",
   "com.typesafe.akka"       %% "akka-persistence"                     % AkkaVersion,
   "com.typesafe.akka"       %% "akka-persistence-cassandra"           % AkkaPersistenceCassandra,
-  "com.google.protobuf"     % "protobuf-java-util"                    % "3.2.0",
+  "com.google.protobuf"     %  "protobuf-java-util"                   % "3.2.0",
   "com.typesafe.akka"       %% "akka-persistence-tck"                 % AkkaVersion               % Test,
   "com.typesafe.akka"       %% "akka-stream-testkit"                  % AkkaVersion               % Test,
   "com.typesafe.akka"       %% "akka-persistence-cassandra-launcher"  % AkkaPersistenceCassandra  % Test,

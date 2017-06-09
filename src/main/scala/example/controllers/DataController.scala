@@ -37,8 +37,8 @@ class DataController @Inject() (val actors: TopLevelActors)
             case None => NotFound
             case AddDataReply(result) => Ok(toJson(result))
           } recover {
-          case e: AskTimeoutException => onTimeout(e)
-        }
+            case e: AskTimeoutException => onTimeout(e)
+          }
     }
   }
 
@@ -47,7 +47,7 @@ class DataController @Inject() (val actors: TopLevelActors)
         case None => NotFound
         case GetDataReply(entries) => Ok(toJson(entries))
       } recover {
-      case e: AskTimeoutException => onTimeout(e)
-    }
+        case e: AskTimeoutException => onTimeout(e)
+      }
   }
 }
